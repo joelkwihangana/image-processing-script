@@ -9,3 +9,5 @@ for filename in os.listdir(input_folder):
     if filename.endswith(".jpg") or filename.endswith(".png"):
         file_path=os.path.join(input_folder,filename)
         print("Processing:",file_path)
+        with Image.open(file_path) as img:
+            rotated=img.rotate(-90) # -90 clocckwise rotation
