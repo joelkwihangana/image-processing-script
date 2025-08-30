@@ -11,3 +11,6 @@ for filename in os.listdir(input_folder):
         print("Processing:",file_path)
         with Image.open(file_path) as img:
             rotated=img.rotate(-90) # -90 clocckwise rotation
+            #the second requirement is resizing.
+            resized=rotated.resize((128,128)) #.resize((width,height))->create a new sized image
+            
