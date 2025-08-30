@@ -13,4 +13,8 @@ for filename in os.listdir(input_folder):
             rotated=img.rotate(-90) # -90 clocckwise rotation
             #the second requirement is resizing.
             resized=rotated.resize((128,128)) #.resize((width,height))->create a new sized image
-            
+            #save in Correct Format
+            new_filename=os.path.splitext(filename)[0] + ".jpg"
+            save_path=os.path.join(output_folder,new_filename)
+            resized.save(save_path,"JPEG")
+            print("Saved:",save_path)
